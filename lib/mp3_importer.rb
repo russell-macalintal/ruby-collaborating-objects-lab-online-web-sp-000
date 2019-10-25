@@ -9,11 +9,11 @@ class MP3Importer
   def files
     # @files = Dir["#{@path}/*.mp3"]
     @files = Dir.entries(@path).select {|f| !File.directory? f}
-    binding.pry
+    # binding.pry
   end
 
   def import
-    binding.pry
+    # binding.pry
     @files.each do |filename|
       Song.new_by_filename(filename)
     end
